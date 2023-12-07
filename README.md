@@ -4,6 +4,63 @@
 Welcome to the e-Commerce Price Tracker repository! This project monitors the actions of platforms such as Amazon and provides you with the latest price of the products you are looking for.
 And it gives users precisely when it's the optimal moment to make a purchase.
 
+## Getting Started
+
+First, run the development server:
+
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
+
+## (18:00) Project Setup
+
+```bash
+❯ npx create-next-app@latest ./
+✔ Would you like to use TypeScript? … No / Yes
+✔ Would you like to use ESLint? … No / Yes
+✔ Would you like to use Tailwind CSS? … No / Yes
+✔ Would you like to use `src/` directory? … No / Yes
+✔ Would you like to use App Router? (recommended) … No / Yes
+✔ Would you like to customize the default import alias (@/*)? … No / Yes
+✔ What import alias would you like configured? … @/*
+Creating a new Next.js app in /home/tovar/Documents/yt-tutos/js_mastery/pricewise/main.
+
+Using npm.
+
+Initializing project with template: app-tw
+
+
+Installing dependencies:
+- react
+- react-dom
+- next
+
+Installing devDependencies:
+- typescript
+- @types/node
+- @types/react
+- @types/react-dom
+- autoprefixer
+- postcss
+- tailwindcss
+
+
+added 119 packages, and audited 120 packages in 14s
+
+21 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+Success! Created main at /home/tovar/Documents/yt-tutos/js_mastery/pricewise/main
+
+```
+
 In this project I learned:
 - What web scraping really is.
 - Build a tool to leverage it.
