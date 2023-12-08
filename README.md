@@ -118,6 +118,21 @@ focusing on what truly matters.
     Email Notifications: Receive alerts when prices drop to your specified threshold.
     Customizable Settings: Tailor the tracker to suit your preferences and needs.
 
+## (1:09:32) BrightData proxy configuration
+
+
+## (1:11:10) Environment Variables
+
+## (1:14:10) Install axios
+Axios is a library for making HTTP requests in Node.js and React.
+```bash
+❯ npm install axios
+```
+## (1:14:44) Install cheerio
+Cheerio is a library for parsing HTML and extracting data from it.
+```bash
+❯ npm install cheerio
+```
 
 # Contributing
 
