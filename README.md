@@ -61,6 +61,12 @@ Success! Created main at /home/tovar/Documents/yt-tutos/js_mastery/pricewise/mai
 
 ```
 
+## (27:11) Unzip the static files
+```bash
+❯ wget https://drive.google.com/file/d/1v6h993BgYX6axBoIXFbZ9HQAgqbR4PSH/view?pli=1
+❯ unzip public.zip -d public
+```
+
 In this project I learned:
 - What web scraping really is.
 - Build a tool to leverage it.
