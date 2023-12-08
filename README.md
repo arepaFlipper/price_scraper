@@ -67,6 +67,10 @@ Success! Created main at /home/tovar/Documents/yt-tutos/js_mastery/pricewise/mai
 ❯ unzip public.zip -d public
 ```
 
+### add the `favicon.ico` file
+It is mandatory to add it at one folder only, either public/ or app/ but not in both.
+
+
 In this project I learned:
 - What web scraping really is.
 - Build a tool to leverage it.
