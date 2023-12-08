@@ -61,6 +61,14 @@ Success! Created main at /home/tovar/Documents/yt-tutos/js_mastery/pricewise/mai
 
 ```
 
+## Repository Setup
+On GitHub:
+```bash
+❯ Settings ❯ Branches: (https://github.com/arepaFlipper/price_scrapper/settings/branch_protection_rules/new )
+❯ Branch name pattern: ^(main|master)$ ❯ Protect matching branches ❯ Require a pull request before merging.
+❯ Require status checks to pass before merging.
+```
+
 ## (27:11) Unzip the static files
 ```bash
 ❯ wget https://drive.google.com/file/d/1v6h993BgYX6axBoIXFbZ9HQAgqbR4PSH/view?pli=1
