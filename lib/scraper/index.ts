@@ -1,6 +1,6 @@
 import axios from "axios";
 import * as cheerio from "cheerio";
-import { extractPrice, extractCurrency } from "@/lib/utils";
+import { extractPrice, extractCurrency, extractDescription } from "@/lib/utils";
 
 export const scrapeAmazonProduct = async (url: string) => {
   if (!url) return;
@@ -36,11 +36,29 @@ export const scrapeAmazonProduct = async (url: string) => {
     const image_urls = Object.keys(JSON.parse(images));
     const currency = extractCurrency($('.a-price-symbol'));
     const discount_rate = $('.savingsPercentage').text().replace(/[-%]/g, "");
-    const extracted_data = { title, current_price, original_price, out_of_stock, image_urls, currency, discount_rate };
+
+    const description = extractDescription($);
 
 
-    const data = { url, currency: currency || "USD($)", image: image_urls[0], title, currentPrice: Number(current_price), originalPrice: Number(original_price), priceHistory: [], discountRate: Number(discount_rate) || 0, category: "category", reviewsCount: 55, stars: 4.9, isOutOfStock: out_of_stock };
-    return data;
+    const extracted_data = {
+      url,
+      currency: currency || "USD($)",
+      image: image_urls[0],
+      title,
+      currentPrice: Number(current_price) || Number(original_price),
+      originalPrice: Number(original_price) || Number(current_price),
+      priceHistory: [],
+      discountRate: Number(discount_rate) || 0,
+      category: "category",
+      reviewsCount: 55,
+      stars: 4.9,
+      isOutOfStock: out_of_stock,
+      description,
+      lowestPrice: Number(current_price) || Number(original_price),
+      highestPrice: Number(original_price) || Number(current_price),
+      average: Number(current_price) || Number(original_price),
+    };
+    return extracted_data;
 
   } catch (error: any) {
     throw new Error(`Failed to scrape product: ${error.message}`);
