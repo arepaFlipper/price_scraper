@@ -132,7 +132,27 @@ Axios is a library for making HTTP requests in Node.js and React.
 Cheerio is a library for parsing HTML and extracting data from it.
 ```bash
 ❯ npm install cheerio
+
+
+
 ```
+The following is an example of how cheerio is used to scrape the amazon product page:
+```html
+ <h1 id="title" class="a-size-large a-spacing-none"> 
+   <span id="productTitle" class="a-size-large product-title-word-break">YMDK 120 Keys ABS ANSI ISO 1.5mm Blank Milk Fog OEM Profile Shine Through Keycap for MX Mechanical Keyboard RGB GK61 96 84 68 108 87</span>     
+ </h1> 
+```
+
+To extract the text content of the element, we can use the following code:
+```js
+    const $ = cheerio.load(response.data);
+    const title = $("#productTitle").text().trim();
+```
+
+It search for the element with the id of "productTitle" in the HTML document and returns the text content of that element.
+
+Be aware that sometimes Amazon prompts the previous prices to show the discounted price, this could confuse the data extraction.
+
 
 # Contributing
 

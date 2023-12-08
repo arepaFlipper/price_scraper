@@ -1,5 +1,6 @@
-import axios, { AxiosError } from "axios";
+import axios from "axios";
 import * as cheerio from "cheerio";
+import { extractPrice, extractCurrency } from "@/lib/utils";
 
 export const scrapeAmazonProduct = async (url: string) => {
   if (!url) return;
@@ -27,8 +28,16 @@ export const scrapeAmazonProduct = async (url: string) => {
     const $ = cheerio.load(response.data);
 
     const title = $("#productTitle").text().trim();
-    console.log(`🫀%cindex.ts:30 - title`, 'font-weight:bold; background:#738c00;color:#fff;');
-    console.log(title);
+    const current_price = extractPrice($('.priceToPay span.a-price-whole'), $('a.size.base.a-color-price'), $('.a-button-selected .a-color-base'), $('.a-price.a-text-price'));
+    const original_price = extractPrice($('#priceblock_ourprice'), $('.a-price.a-text-price span.a-offscreen'), $('#listPrice'), $('#priceblock_dealprice'), $('.a-size-base.a-color-price'));
+    const out_of_stock = $('#availability span').text().trim().toLowerCase() === "currently unavailable";
+
+    const images = $('#imgBlkFront').attr('data-a-dynamic-image') || $('#landingImage').attr('data-a-dynamic-image') || '{}';
+    const image_urls = Object.keys(JSON.parse(images));
+    const currency = extractCurrency($('.a-price-symbol'));
+    const discount_rate = $('.savingsPercentage').text().replace(/[-%]/g, "");
+    const extracted_data = { title, current_price, original_price, out_of_stock, image_urls, currency, discount_rate };
+
 
 
   } catch (error: any) {
