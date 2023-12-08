@@ -1,3 +1,5 @@
+import SearchBar from "@/components/SearchBar";
+import HeroCarousel from "@/components/HeroCarousel";
 import Image from "next/image";
 type THome = {}
 
@@ -19,10 +21,10 @@ const Home = ({ }: THome) => {
               Empowering users with robust, self-service product and growth analytics to optimize conversion, foster engagement, and enhance customer retention.
             </p>
 
-            Searchbar
+            <SearchBar />
           </div>
 
-          HeroCarousel
+          <HeroCarousel />
         </div>
       </section>
       <section className="trending-section">
