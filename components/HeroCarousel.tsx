@@ -17,7 +17,7 @@ type THeroCarousel = {}
 const HeroCarousel = ({ }: THeroCarousel) => {
   return (
     <div className="hero-carousel">
-      <Carousel showThumbs={false} autoPlay infiniteLoop interval={2000} showArrows={false} showStatus={false}>
+      <Carousel showThumbs={false} infiniteLoop showArrows={false} showStatus={false}>
         {heroImages.map((image, idx) => {
           return (
             <Image src={image.imgUrl} alt={image.alt} key={idx} width={484} height={484} className="object-contain" />
