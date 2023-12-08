@@ -39,6 +39,8 @@ export const scrapeAmazonProduct = async (url: string) => {
     const extracted_data = { title, current_price, original_price, out_of_stock, image_urls, currency, discount_rate };
 
 
+    const data = { url, currency: currency || "USD($)", image: image_urls[0], title, currentPrice: Number(current_price), originalPrice: Number(original_price), priceHistory: [], discountRate: Number(discount_rate) || 0, category: "category", reviewsCount: 55, stars: 4.9, isOutOfStock: out_of_stock };
+    return data;
 
   } catch (error: any) {
     throw new Error(`Failed to scrape product: ${error.message}`);
