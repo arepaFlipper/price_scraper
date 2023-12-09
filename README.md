@@ -121,7 +121,13 @@ focusing on what truly matters.
 ## (1:09:32) BrightData proxy configuration
 
 
-## (1:11:10) Environment Variables
+## (1:11:10) (1:53:00) Environment Variables
+
+In `MongoDB` you get the URI by selecting `connect ❯ MongoDB Driver`, and the URI is something like:
+
+```
+mongodb+srv://<username>:<password>@pricescrapper.lw8rqio.mongodb.net/?retryWrites=true&w=majority
+```
 
 ## (1:14:10) Install axios
 Axios is a library for making HTTP requests in Node.js and React.
