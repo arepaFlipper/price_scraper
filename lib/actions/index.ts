@@ -4,6 +4,7 @@ import { revalidatePath } from "next/cache";
 import { connectToDB } from "@/lib/mongoose";
 import { scrapeAmazonProduct } from "@/lib/scraper";
 import Product from "@/lib/models/product.model";
+import type { Product as TProduct } from "@/types";
 import { getLowestPrice, getHighestPrice, getAveragePrice } from "@/lib/utils";
 
 export const scrapeAndStoreProduct = async (productUrl: string) => {
@@ -14,7 +15,7 @@ export const scrapeAndStoreProduct = async (productUrl: string) => {
     const scrapedProduct = await scrapeAmazonProduct(productUrl);
     if (!scrapedProduct) return;
 
-    let product = scrapedProduct;
+    let product: TProduct = scrapedProduct;
     const existing_product = await Product.findOne({ url: scrapedProduct.url });
 
     if (existing_product) {

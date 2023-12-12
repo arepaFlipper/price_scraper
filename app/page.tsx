@@ -35,7 +35,7 @@ const Home = async ({ }: THome) => {
         <h2 className="section-text">Trending</h2>
 
         <div className="flex flex-wrap gap-x-8 gap-y-16">
-          {all_products.map((product, idx) => {
+          {all_products?.map((product, idx) => {
             return (
               <ProductCard product={product} />
             )

@@ -58,7 +58,7 @@ const ProductDetails = async ({ params: { id } }: TDetatils) => {
               <div className="flex gap-3">
                 <div className="product-stars">
                   <Image src="/assets/icons/star.svg" alt="star" width={16} height={16} />
-                  <p className="text-sm text-primary-orange font-semibold">{product.starts || "25"}</p>
+                  <p className="text-sm text-primary-orange font-semibold">{product.stars || "25"}</p>
                 </div>
                 <div className="product-reviews">
                   <Image src="/assets/icons/comment.svg" alt="comment" width={16} height={16} />
