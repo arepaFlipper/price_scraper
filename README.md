@@ -170,7 +170,19 @@ this error.
 
 ## (2:43:00) Use the in-line style properties
 I use an alternative to the `tailwindcss` BUG when declaring a dynamic string for the `className` parameters.
-
+## (2:51:06) solve the common typescript warning
+```
+similarProducts?.length > 0
+```
+Typescript does not like this:
+```
+Diagnostics:
+1. 'similarProducts.length' is possibly 'undefined'. [18048]
+```
+Fix this by adding an extra statement like this
+```
+similarProducts && similarProducts?.length > 0
+```
 # Contributing
 
 We welcome contributions from the community! If you have any ideas for improvements, bug reports, or new features, please open an issue or submit a pull request.
