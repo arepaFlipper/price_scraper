@@ -46,3 +46,14 @@ export const getProductById = async (productId: string) => {
   } catch (error) {
   }
 }
+
+export const getAllProducts = async () => {
+  try {
+    connectToDB();
+    const products = await Product.find();
+    return products;
+  } catch (error) {
+    console.error(error);
+
+  }
+}

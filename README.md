@@ -138,10 +138,8 @@ Axios is a library for making HTTP requests in Node.js and React.
 Cheerio is a library for parsing HTML and extracting data from it.
 ```bash
 ❯ npm install cheerio
-
-
-
 ```
+
 The following is an example of how cheerio is used to scrape the amazon product page:
 ```html
  <h1 id="title" class="a-size-large a-spacing-none"> 
@@ -159,6 +157,16 @@ It search for the element with the id of "productTitle" in the HTML document and
 
 Be aware that sometimes Amazon prompts the previous prices to show the discounted price, this could confuse the data extraction.
 
+## (1:14:44) Fetch products
+```
+Unhandled Runtime Error
+
+Error: Maximum call stack size exceeded
+```
+
+It prompts an error, because mongoDB has its own special way of creating its documents in the DB,
+so the fetch data is not a typical object, It contains some more complex properties which is causing 
+this error.
 
 # Contributing
 
