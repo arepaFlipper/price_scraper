@@ -118,6 +118,58 @@ focusing on what truly matters.
     Email Notifications: Receive alerts when prices drop to your specified threshold.
     Customizable Settings: Tailor the tracker to suit your preferences and needs.
 
+## (1:09:32) BrightData proxy configuration
+
+
+## (1:11:10) (1:53:00) Environment Variables
+
+In `MongoDB` you get the URI by selecting `connect ❯ MongoDB Driver`, and the URI is something like:
+
+```
+mongodb+srv://<username>:<password>@pricescrapper.lw8rqio.mongodb.net/?retryWrites=true&w=majority
+```
+
+## (1:14:10) Install axios
+Axios is a library for making HTTP requests in Node.js and React.
+```bash
+❯ npm install axios
+```
+## (1:14:44) Install cheerio
+Cheerio is a library for parsing HTML and extracting data from it.
+```bash
+❯ npm install cheerio
+```
+
+The following is an example of how cheerio is used to scrape the amazon product page:
+```html
+ <h1 id="title" class="a-size-large a-spacing-none"> 
+   <span id="productTitle" class="a-size-large product-title-word-break">YMDK 120 Keys ABS ANSI ISO 1.5mm Blank Milk Fog OEM Profile Shine Through Keycap for MX Mechanical Keyboard RGB GK61 96 84 68 108 87</span>     
+ </h1> 
+```
+
+To extract the text content of the element, we can use the following code:
+```js
+    const $ = cheerio.load(response.data);
+    const title = $("#productTitle").text().trim();
+```
+
+It search for the element with the id of "productTitle" in the HTML document and returns the text content of that element.
+
+Be aware that sometimes Amazon prompts the previous prices to show the discounted price, this could confuse the data extraction.
+
+## (1:14:44) Fetch products
+```
+Unhandled Runtime Error
+
+Error: Maximum call stack size exceeded
+```
+
+It prompts an error, because mongoDB has its own special way of creating its documents in the DB,
+so the fetch data is not a typical object, It contains some more complex properties which is causing 
+this error.
+
+## (2:43:00) Use the in-line style properties
+I use an alternative to the `tailwindcss` BUG when declaring a dynamic string for the `className` parameters.
 
 # Contributing
 
