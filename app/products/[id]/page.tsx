@@ -4,6 +4,7 @@ import { getProductById } from "@/lib/actions";
 import Image from "next/image";
 import Link from "next/link";
 import { formatNumber } from "@/lib/utils";
+import PriceInfoCard from "@/components/PriceInfoCard";
 
 type TDetatils = {
   params: {
@@ -74,7 +75,10 @@ const ProductDetails = async ({ params: { id } }: TDetatils) => {
 
           <div className="my-7 flex flex-col gap-5">
             <div className="flex gap-5 flex-wrap">
-
+              <PriceInfoCard title="Current Price" iconSrc="/assets/icons/price-tag.svg" value={`${product.currency} ${formatNumber(product.currentPrice)}`} borderColor="#72B9FF" />
+              <PriceInfoCard title="Average Price" iconSrc="/assets/icons/chart.svg" value={`${product.currency} ${formatNumber(product.averagePrice)}`} borderColor="#8C61FF" />
+              <PriceInfoCard title="Highest Price" iconSrc="/assets/icons/arrow-up.svg" value={`${product.currency} ${formatNumber(product.highestPrice)}`} borderColor="#FF2C2C" />
+              <PriceInfoCard title="Lowest Price" iconSrc="/assets/icons/arrow-down.svg" value={`${product.currency} ${formatNumber(product.lowestPrice)}`} borderColor="#23FF39" />
             </div>
           </div>
         </div>

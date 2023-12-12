@@ -168,6 +168,9 @@ It prompts an error, because mongoDB has its own special way of creating its doc
 so the fetch data is not a typical object, It contains some more complex properties which is causing 
 this error.
 
+## (2:43:00) Use the in-line style properties
+I use an alternative to the `tailwindcss` BUG when declaring a dynamic string for the `className` parameters.
+
 # Contributing
 
 We welcome contributions from the community! If you have any ideas for improvements, bug reports, or new features, please open an issue or submit a pull request.
