@@ -1,4 +1,4 @@
-# e-Commerce Price scrapper
+# e-Commerce Price scraper
 ## Overview
 
 Welcome to the e-Commerce Price Tracker repository! This project monitors the actions of platforms such as Amazon and provides you with the latest price of the products you are looking for.
@@ -64,7 +64,7 @@ Success! Created main at /home/tovar/Documents/yt-tutos/js_mastery/pricewise/mai
 ## Repository Setup
 On GitHub:
 ```bash
-❯ Settings ❯ Branches: (https://github.com/arepaFlipper/price_scrapper/settings/branch_protection_rules/new )
+❯ Settings ❯ Branches: (https://github.com/arepaFlipper/price_scraper/settings/branch_protection_rules/new )
 ❯ Branch name pattern: ^(main|master)$ ❯ Protect matching branches ❯ Require a pull request before merging.
 ❯ Require status checks to pass before merging.
 ```
@@ -86,7 +86,7 @@ In this project I learned:
 - Anti-scraping measures.
 - IP rotation.
 
-### Crawlers vs Scrappers
+### Crawlers vs Scrapers
 | Aspect  | Web Crawlers   | Web Scraper   |
 |-------------- | -------------- | -------------- |
 | Main function    | Navigates the web, indexes content     | Extracts specific data from web pages |
