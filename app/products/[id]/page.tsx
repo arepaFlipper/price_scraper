@@ -6,6 +6,7 @@ import Link from "next/link";
 import { formatNumber } from "@/lib/utils";
 import PriceInfoCard from "@/components/PriceInfoCard";
 import ProductCard from "@/components/ProductCard";
+import Modal from "@/components/Modal";
 
 type TDetatils = {
   params: {
@@ -85,6 +86,7 @@ const ProductDetails = async ({ params: { id } }: TDetatils) => {
             </div>
           </div>
 
+          <Modal />
         </div>
       </div>
 
