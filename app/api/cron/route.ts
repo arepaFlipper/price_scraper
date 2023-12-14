@@ -5,6 +5,10 @@ import { getAveragePrice, getHighestPrice, getLowestPrice, getEmailNotificationT
 import { generateEmailBody, sendEmail } from "@/lib/nodemailer";
 import { NextResponse } from "next/server";
 
+export const maxDuration = 5 * (60 * 1000); // 5 minutes
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 export const GET = async () => {
   try {
     connectToDB();
@@ -22,9 +26,9 @@ export const GET = async () => {
           throw new Error("No product found");
         }
 
-        const updated_price_history: any = [...current_product.price_history, { price: scraped_product.currentPrice }];
+        const updated_price_history: any = [...current_product.priceHistory, { price: scraped_product.currentPrice }];
 
-        const product = { ...scraped_product, price_history: updated_price_history, lowest_price: getLowestPrice(updated_price_history), highest_price: getHighestPrice(updated_price_history), average_price: getAveragePrice(updated_price_history) }
+        const product = { ...scraped_product, priceHistory: updated_price_history, lowest_price: getLowestPrice(updated_price_history), highest_price: getHighestPrice(updated_price_history), average_price: getAveragePrice(updated_price_history) }
 
         const updated_product = await Product.findOneAndUpdate({ url: product.url }, product);
 
