@@ -121,8 +121,15 @@ focusing on what truly matters.
 ## (1:09:32) BrightData proxy configuration
 
 
-## (1:11:10) (1:53:00) Environment Variables
-
+## (1:11:10) (1:53:00) (3:26:00) Environment Variables
+```
+BRIGHT_DATA_USERNAME=
+BRIGHT_DATA_PASSWORD=
+BRIGHT_DATA_PORT=
+MONGODB_URI=
+EMAIL_USERNAME=
+EMAIL_PASSWORD=
+```
 In `MongoDB` you get the URI by selecting `connect ❯ MongoDB Driver`, and the URI is something like:
 
 ```
@@ -183,6 +190,19 @@ Fix this by adding an extra statement like this
 ```
 similarProducts && similarProducts?.length > 0
 ```
+
+## (3:22:10) Use `nodemailer` with Gmail
+This library is actually easier to work with `hotmail ` but 
+in case of `gmail` we may read the [documentation](https://nodemailer.com/usage/using-gmail/).
+<a href="https://nodemailer.com/usage/using-gmail/">documentation</a>.
+
+To make `TypeScript` happy including `nodemailer`, add "server client" at the top of the file, and
+add the types: 
+
+```bash
+npm  i -D @types/nodemailer
+```
+
 # Contributing
 
 We welcome contributions from the community! If you have any ideas for improvements, bug reports, or new features, please open an issue or submit a pull request.

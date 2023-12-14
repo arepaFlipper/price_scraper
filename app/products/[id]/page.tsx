@@ -86,7 +86,7 @@ const ProductDetails = async ({ params: { id } }: TDetatils) => {
             </div>
           </div>
 
-          <Modal />
+          <Modal productId={id} />
         </div>
       </div>
 
