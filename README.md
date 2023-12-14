@@ -1,4 +1,4 @@
-# e-Commerce Price scrapper
+# e-Commerce Price scraper
 ## Overview
 
 Welcome to the e-Commerce Price Tracker repository! This project monitors the actions of platforms such as Amazon and provides you with the latest price of the products you are looking for.
@@ -64,7 +64,7 @@ Success! Created main at /home/tovar/Documents/yt-tutos/js_mastery/pricewise/mai
 ## Repository Setup
 On GitHub:
 ```bash
-❯ Settings ❯ Branches: (https://github.com/arepaFlipper/price_scrapper/settings/branch_protection_rules/new )
+❯ Settings ❯ Branches: (https://github.com/arepaFlipper/price_scraper/settings/branch_protection_rules/new )
 ❯ Branch name pattern: ^(main|master)$ ❯ Protect matching branches ❯ Require a pull request before merging.
 ❯ Require status checks to pass before merging.
 ```
@@ -86,7 +86,7 @@ In this project I learned:
 - Anti-scraping measures.
 - IP rotation.
 
-### Crawlers vs Scrappers
+### Crawlers vs Scrapers
 | Aspect  | Web Crawlers   | Web Scraper   |
 |-------------- | -------------- | -------------- |
 | Main function    | Navigates the web, indexes content     | Extracts specific data from web pages |
@@ -121,8 +121,15 @@ focusing on what truly matters.
 ## (1:09:32) BrightData proxy configuration
 
 
-## (1:11:10) (1:53:00) Environment Variables
-
+## (1:11:10) (1:53:00) (3:26:00) Environment Variables
+```
+BRIGHT_DATA_USERNAME=
+BRIGHT_DATA_PASSWORD=
+BRIGHT_DATA_PORT=
+MONGODB_URI=
+EMAIL_USERNAME=
+EMAIL_PASSWORD=
+```
 In `MongoDB` you get the URI by selecting `connect ❯ MongoDB Driver`, and the URI is something like:
 
 ```
@@ -170,6 +177,31 @@ this error.
 
 ## (2:43:00) Use the in-line style properties
 I use an alternative to the `tailwindcss` BUG when declaring a dynamic string for the `className` parameters.
+## (2:51:06) solve the common typescript warning
+```
+similarProducts?.length > 0
+```
+Typescript does not like this:
+```
+Diagnostics:
+1. 'similarProducts.length' is possibly 'undefined'. [18048]
+```
+Fix this by adding an extra statement like this
+```
+similarProducts && similarProducts?.length > 0
+```
+
+## (3:22:10) Use `nodemailer` with Gmail
+This library is actually easier to work with `hotmail ` but 
+in case of `gmail` we may read the [documentation](https://nodemailer.com/usage/using-gmail/).
+<a href="https://nodemailer.com/usage/using-gmail/">documentation</a>.
+
+To make `TypeScript` happy including `nodemailer`, add "server client" at the top of the file, and
+add the types: 
+
+```bash
+npm  i -D @types/nodemailer
+```
 
 # Contributing
 
